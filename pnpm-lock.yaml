@@ -17,9 +17,6 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
-      radashi:
-        specifier: ^12.3.0
-        version: 12.3.0
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -755,10 +752,6 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
-
-  radashi@12.3.0:
-    resolution: {integrity: sha512-ViMnMTF4g+wqL1pp4sMJOEXFydvB+6EsJJOv9/PBVO1lrKbeYNay2ePd6SGrbaBKf1MH+ZpGFx0EwGTElVCWHw==}
-    engines: {node: '>=16.0.0'}
 
   readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
@@ -1515,8 +1508,6 @@ snapshots:
   prettier@3.4.2: {}
 
   punycode@2.3.1: {}
-
-  radashi@12.3.0: {}
 
   readdirp@4.0.2: {}
 
