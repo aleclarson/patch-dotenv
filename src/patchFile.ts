@@ -1,14 +1,7 @@
 import fs from 'node:fs'
-import { Node } from './parse'
-import { patch } from './patch'
+import { patch as applyPatch, PatchCallback, Variables } from './patch'
 
-export function patchFile(
-  file: string,
-  callback: (
-    variables: Record<string, string | null | undefined>,
-    nodes: Node[]
-  ) => void
-) {
+export function patchFile(file: string, patch: PatchCallback | Variables) {
   let content: string
   try {
     content = fs.readFileSync(file, 'utf8')
@@ -18,6 +11,6 @@ export function patchFile(
     }
     content = ''
   }
-  content = patch(content, callback)
+  content = applyPatch(content, patch)
   fs.writeFileSync(file, content)
 }

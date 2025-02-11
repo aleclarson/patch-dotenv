@@ -1,13 +1,11 @@
 import { Node, parse } from './parse'
 import { stringify } from './stringify'
 
-export function patch(
-  content: string,
-  callback: (
-    variables: Record<string, string | null | undefined>,
-    nodes: Node[]
-  ) => void
-) {
+export type Variables = Record<string, string | null | undefined>
+
+export type PatchCallback = (variables: Variables, nodes: Node[]) => void
+
+export function patch(content: string, patch: PatchCallback | Variables) {
   const nodes = parse(content.trimEnd())
   const variables: Record<string, string> = {}
 
@@ -23,7 +21,11 @@ export function patch(
   const originalNodeCount = nodes.length
   const originalValues = { ...variables }
 
-  callback(variables, nodes)
+  if (typeof patch === 'function') {
+    patch(variables, nodes)
+  } else {
+    Object.assign(variables, patch)
+  }
 
   // Filter out empty variables, and update any variable nodes whose
   // value was changed through the variables object.
