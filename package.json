@@ -2,7 +2,7 @@
   "name": "patch-dotenv",
   "description": "Patch a .env file in place, preserving the existing formatting.",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "bin": {
     "patch-dotenv": "./dist/main.js"
   },
